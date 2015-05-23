@@ -1,0 +1,22 @@
+{
+  "name": "tump-tump",
+  "version": "1.0.0",
+  "description": "seattle bike count visualization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bricegnichols/tump-tump"
+  },
+  "author": "Brice Nichols <bricenichols@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bricegnichols/tump-tump/issues"
+  },
+  "homepage": "https://github.com/bricegnichols/tump-tump",
+  "dependencies": {
+    "node": "0.0.0"
+  }
+}
