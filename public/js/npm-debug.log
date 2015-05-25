@@ -1,0 +1,85 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'leafletjs', '--save' ]
+2 info using npm@2.1.18
+3 info using node@v0.10.35
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json node@0.0.0 No description
+6 warn package.json node@0.0.0 No repository field.
+7 warn package.json node@0.0.0 No README data
+8 silly cache add args [ 'leafletjs', null ]
+9 verbose cache add spec leafletjs
+10 silly cache add parsed spec { raw: 'leafletjs',
+10 silly cache add   scope: null,
+10 silly cache add   name: 'leafletjs',
+10 silly cache add   rawSpec: '',
+10 silly cache add   spec: '*',
+10 silly cache add   type: 'range' }
+11 verbose addNamed leafletjs@*
+12 silly addNamed semver.valid null
+13 silly addNamed semver.validRange *
+14 silly addNameRange { name: 'leafletjs', range: '*', hasData: false }
+15 silly mapToRegistry name leafletjs
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry uri https://registry.npmjs.org/leafletjs
+19 verbose addNameRange registry:https://registry.npmjs.org/leafletjs not in flight; fetching
+20 verbose request uri https://registry.npmjs.org/leafletjs
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 10:31:43
+23 verbose request using bearer token for auth
+24 verbose request id 0973644042e7853b
+25 http request GET https://registry.npmjs.org/leafletjs
+26 http 404 https://registry.npmjs.org/leafletjs
+27 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'cache-control': 'max-age=0',
+27 verbose headers   'content-length': '51',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   date: 'Mon, 25 May 2015 17:31:42 GMT',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   connection: 'keep-alive',
+27 verbose headers   'x-served-by': 'cache-sea1921-SEA',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1432575102.218339,VS0,VE51' }
+28 silly get cb [ 404,
+28 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly get     'content-type': 'application/json',
+28 silly get     'cache-control': 'max-age=0',
+28 silly get     'content-length': '51',
+28 silly get     'accept-ranges': 'bytes',
+28 silly get     date: 'Mon, 25 May 2015 17:31:42 GMT',
+28 silly get     via: '1.1 varnish',
+28 silly get     connection: 'keep-alive',
+28 silly get     'x-served-by': 'cache-sea1921-SEA',
+28 silly get     'x-cache': 'MISS',
+28 silly get     'x-cache-hits': '0',
+28 silly get     'x-timer': 'S1432575102.218339,VS0,VE51' } ]
+29 verbose stack Error: 404 Not Found: leafletjs
+29 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:241:14)
+29 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+29 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:373:22)
+29 verbose stack     at Request.emit (events.js:98:17)
+29 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1318:14)
+29 verbose stack     at Request.emit (events.js:117:20)
+29 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1266:12)
+29 verbose stack     at IncomingMessage.emit (events.js:117:20)
+29 verbose stack     at _stream_readable.js:944:16
+29 verbose stack     at process._tickCallback (node.js:442:13)
+30 verbose statusCode 404
+31 verbose pkgid leafletjs
+32 verbose cwd /Users/csattler2/tump-tump/public/js
+33 error Darwin 13.4.0
+34 error argv "node" "/usr/local/bin/npm" "install" "leafletjs" "--save"
+35 error node v0.10.35
+36 error npm  v2.1.18
+37 error code E404
+38 error 404 Not Found: leafletjs
+38 error 404
+38 error 404 'leafletjs' is not in the npm registry.
+38 error 404 You should bug the author to publish it (or use the name yourself!)
+38 error 404 It was specified as a dependency of 'tump-tump'
+38 error 404
+38 error 404 Note that you can also install from a
+38 error 404 tarball, folder, http url, or git url.
+39 verbose exit [ 1, true ]
