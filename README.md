@@ -12,3 +12,9 @@ Thoughts:
   - select locations from a map
   - view average counts by hour, latest trends for the year, comparisons versus last year, etc.
   - contrast with weather and other factors, a la Jake V.'s analysis
+
+Currently I'm testing in the viz.js script, running it with node to load in API data. 
+
+I'd like to local cache all the count data, for each location in a db, (mongo?) to avoid calling directly to the source. The database will be updated at intervals matching the base data, probably every couple weeks or so. 
+
+Next steps are saving all count data to the db, and then making example d3 charts for a location.
