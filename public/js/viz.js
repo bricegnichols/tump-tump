@@ -21,3 +21,20 @@ http.get({
     //console.log(JSON.stringify(chunk['date']));
   });
 })
+
+// Another way to access the data, using the request module
+// request(dataUrl, function (error, response, body) {
+//   if (!error && response.statusCode == 200) {
+//     //console.log(body)
+//     var data = JSON.parse(body);
+//     console.log(data);
+//   }
+// });
+
+// Access directly with d3
+// d3.json(dataUrl, function(json) {
+//     console.log(json);
+// });
+
+// Write JSON response directly to disk
+//request(dataUrl).pipe(fs.createWriteStream('testOut.json'))
