@@ -1,6 +1,3 @@
-
-
-
 var map;
 var ajaxRequest;
 var plotlist;
@@ -30,8 +27,16 @@ function initmap() {
 		    color: 'red',
 		    fillColor: '#f03',
 		    fillOpacity: 0.5
-		}).addTo(map);
+		}).addTo(map).on('click', onClick);
 	};
 }
 
+// show stats when a location is clicked
+ function onClick(e) {
+    //alert(this.getLatLng());
+    // add a div element to the right side of the page to show stats
+    $(".statsPanel").append("<p>Test</p>");
+}
+
+// execute the functions
 initmap();
