@@ -2,5 +2,14 @@ div.statsPanel {
     position: fixed;
     top: 20px;
     right: 0;
-    width: 300px;
+    width: 500px;
+}
+
+.chart div {
+  font: 10px sans-serif;
+  background-color: steelblue;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
 }
