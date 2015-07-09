@@ -3,6 +3,7 @@
 //Load the request module
 var request = require('request');
 var http = require('http');
+var fs = require('fs');
 
 // Sample API output for a single counter location
 var dataUrl = "https://data.seattle.gov/resource/mefu-7eau.json";
@@ -17,8 +18,9 @@ http.get({
   //console.log(res.headers);
   res.on('data', function (chunk) {
   	// do something with the json data
-    console.log('BODY: ' + chunk);
-    //console.log(JSON.stringify(chunk['date']));
+    //console.log('BODY: ' + chunk);
+    console.log(JSON.stringify(chunk['date']));
+
   });
 })
 
@@ -36,5 +38,5 @@ http.get({
 //     console.log(json);
 // });
 
-// Write JSON response directly to disk
-//request(dataUrl).pipe(fs.createWriteStream('testOut.json'))
+// Write JSON response directly to disk for now
+request(dataUrl).pipe(fs.createWriteStream('data.json'))

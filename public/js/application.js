@@ -84,7 +84,15 @@ function initmap() {
  	$("div.counterLoc").html(this.options.title);
 
     // make a fake chart first for testing
-	var data = [4, 8, 15, 16, 23, 42];
+	//var data = [4, 8, 15, 16, 23, 42];
+
+	// Load json data
+	data = $.getJSON("public/js/data.json");
+
+	// Build a list of counts
+	//northData = 
+
+	console.log(data);
 
 	var x = d3.scale.linear()
 	    .domain([0, d3.max(data)])
