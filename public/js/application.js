@@ -3,6 +3,60 @@ var ajaxRequest;
 var plotlist;
 var plotlayers=[];
 
+//Load the request module
+// var request = require('request');
+// var http = require('http');
+// var fs = require('fs');
+
+// Add counter location markers
+var counterDict = 	{
+						'Ballard': {
+							'lat': 47.671035,
+							'long': -122.384772,
+							'endpoint': '47yq-6ugv'
+						}, 
+						'Fremont Bridge': {
+							'lat': 47.647544,
+							'long': -122.349784,
+							'endpoint': '65db-xm6k'
+						},
+						'39th Ave NE Greenway': {
+							'lat': 47.673979,
+							'long': -122.285820,
+							'endpoint':	'0'
+						},
+						'Burke-Gilman at NE 70th St.': {
+							'lat': 47.679505,
+							'long': -122.265328,
+							'endpoint': '0'
+						},
+						'Elliott Bay Trail': {
+							'lat': 47.615184,
+							'long': -122.355407,
+							'endpoint': '0'
+						},
+						'I-90 Trail': {
+							'lat': 47.590443,
+							'long': -122.286351,
+							'endpoint': '0'
+						},
+						'S. Spokane St. Bridge': {
+							'lat': 47.571331,
+							'long': -122.351986,
+							'endpoint': '0'
+						},
+						'26th Sve. SW Greenway': {
+							'lat': 47.562917,
+							'long': -122.365480,
+							'endpoint': '0'
+						},
+						'Chief Sealth Trail': {
+							'lat': 47.527868,
+							'long': -122.280981,
+							'endpoint': '0'
+						}
+				    }
+
 function initmap() {
 	// set up the map
 	map = new L.Map('map');
@@ -16,71 +70,22 @@ function initmap() {
 	map.setView(new L.LatLng(47.61, -122.3),10);
 	map.addLayer(osm);
 
-	// Add counter location markers
-	var counterDict = 	[ {
-							'name': 'Ballard',
-							'lat': 47.671035,
-							'long': -122.384772,
-							'endpoint': '47yq-6ugv'
-						}
-						, {
-							'name': 'Fremont Bridge',
-							'lat': 47.647544,
-							'long': -122.349784,
-							'endpoint': '65db-xm6k'
-						}
-						, {
-							'name': '39th Ave NE Greenway',
-							'lat': 47.673979,
-							'long': -122.285820	
-						}
-						, {
-						  	'name': 'Burke-Gilman at NE 70th St.',
-							'lat': 47.679505,
-							'long': -122.265328
-						}
-						, {
-							'name': 'Elliott Bay Trail',
-							'lat': 47.615184,
-							'long': -122.355407
-						}
-						, {
-							'name': 'I-90 Trail',
-							'lat': 47.590443,
-							'long': -122.286351
-						}
-						, {
-							'name': 'S. Spokane St. Bridge',
-							'lat': 47.571331,
-							'long': -122.351986
-						}
-						, {
-							'name': '26th Sve. SW Greenway',
-							'lat': 47.562917,
-							'long': -122.365480
-						}
-						, {
-							'name': 'Chief Sealth Trail',
-							'lat': 47.527868,
-							'long': -122.280981	
-						}
-						  ]
 
 	// Make marker size a function of zoom...
 	markerSize = 500;
 
 	var marker = [];
 
-	for (var i = 0; i < counterDict.length; i++) {
-		marker[i] = new L.marker([counterDict[i]['lat'],counterDict[i]['long']], {
-		    title: counterDict[i]['name'],
+	for (var i = 0; i < Object.keys(counterDict).length; i++) {
+		marker[i] = new L.marker([counterDict[Object.keys(counterDict)[i]]['lat'],counterDict[Object.keys(counterDict)[i]]['long']], {
+		    title: Object.keys(counterDict)[i],
 		    opacity: 0.7,
 		}).addTo(map).on('click', onClick);
 	};
 }
 
 // show stats when a location is clicked
- function onClick(e) {
+function onClick(e) {
 
  	// List Counter Name
  	$("div.counterLoc").html(this.options.title);
@@ -130,25 +135,35 @@ function initmap() {
 }
 
 function getData(location) {
-	// Get the data and print to screen 
-	http.get({
-	  hostname: 'data.seattle.gov',
-	  port: 80,
-	  path: dataUrl,
-	  agent: false  // create a new agent just for this one request
-	}, function (res) {
-	  //console.log(res.headers);
-	  res.on('data', function (chunk) {
-	  	// do something with the json data
-	    //console.log('BODY: ' + chunk);
-	    console.log(JSON.stringify(chunk['date']));
 
-	  });
-	});
+	// load the latest counter data
+	// a separate script should provide create and update the data json/xml data
+    // maybe an ajax call to a python (pandas) script that downloads and processes data
+
+	// var dataUrl = "https://data.seattle.gov/resource/mefu-7eau.json";
+	//dataUrl = "https://data.seattle.gov/resource/" + counterDict[location]['endpoint']
+
+	//console.log(dataUrl)
+
+	// Get the data and print to screen 
+	// http.get({
+	//   hostname: 'data.seattle.gov',
+	//   port: 80,
+	//   path: dataUrl,
+	//   agent: false  // create a new agent just for this one request
+	// }, function (res) {
+	//   //console.log(res.headers);
+	//   res.on('data', function (chunk) {
+	//   	// do something with the json data
+	//     //console.log('BODY: ' + chunk);
+	//     console.log(JSON.stringify(chunk['date']));
+
+	//   });
+	// });
 };
 
 // Get 
-locationEnds = counterDict[]
+//locationEnds = counterDict[]
 
 // execute the functions
 initmap();
