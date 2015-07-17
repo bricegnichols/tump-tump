@@ -39,4 +39,4 @@ http.get({
 // });
 
 // Write JSON response directly to disk for now
-request(dataUrl).pipe(fs.createWriteStream('data.json'))
+request(dataUrl).pipe(fs.createWriteStream('data_new.json'))
